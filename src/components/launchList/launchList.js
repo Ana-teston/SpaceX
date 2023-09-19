@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { fetchSpaceXLaunches } from '../../api/spaceX';
+import Card from '../card/card.component';
 
 function LaunchList() {
   const [launches, setLaunches] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const data = await fetchSpaceXLaunches();
         setLaunches(data);
+        setIsLoading(false); // Data has been loaded
       } catch (error) {
         // Handle error, e.g., display an error message
+        console.error('Error fetching SpaceX launches:', error);
       }
     }
 
     fetchData();
   }, []);
 
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+  if (isLoading) {
+    return <p>Loading...</p>; // Display a loading message while fetching data
   }
 
   // Separate launches into three categories: success, failure, and future launches
@@ -27,22 +30,15 @@ function LaunchList() {
   const failureLaunches = launches.filter((launch) => !launch.success);
   const futureLaunches = launches.filter((launch) => new Date(launch.date_local) > new Date());
 
-
   return (
     <div>
       <h1>SpaceX Launches</h1>
 
-      <h2>Successfull Launches: </h2>
+      <h2>Successful Launches: </h2>
       <ul>
         {successLaunches.map((launch) => (
           <li key={launch.id}>
-            <img src={launch.flickr?.original?.[0] ||
-          (launch.links?.patch?.small)} alt="Launch" />
-            <p>Rocket: {launch.name}</p>
-            <p>Flight Number: {launch.flight_number} </p>
-            <p>Date: {formatDate(launch.date_local)}</p>
-            <p>Launch Status: {launch.success ? 'Success' : 'Failure'}</p>
-            <p>Details: {launch.details}</p>
+            <Card launch={launch} />
           </li>
         ))}
       </ul>
@@ -51,13 +47,7 @@ function LaunchList() {
       <ul>
         {failureLaunches.map((launch) => (
           <li key={launch.id}>
-            <img src={launch.flickr?.original?.[0] ||
-          (launch.links?.patch?.small)} alt="Launch" />
-            <p>Rocket: {launch.name}</p>
-            <p>Flight Number: {launch.flight_number} </p>
-            <p>Date: {formatDate(launch.date_local)}</p>
-            <p>Launch Status: {launch.success ? 'Success' : 'Failure'}</p>
-            <p>Details: {launch.details}</p>
+            <Card launch={launch} />
           </li>
         ))}
       </ul>
@@ -66,13 +56,7 @@ function LaunchList() {
       <ul>
         {futureLaunches.map((launch) => (
           <li key={launch.id}>
-            <img src={launch.flickr?.original?.[0] ||
-          (launch.links?.patch?.small)} alt="Launch" />
-            <p>Rocket: {launch.name}</p>
-            <p>Flight Number: {launch.flight_number} </p>
-            <p>Date: {formatDate(launch.date_local)}</p>
-            <p>Launch Status: {launch.success ? 'Success' : 'Failure'}</p>
-            <p>Details: {launch.details}</p>
+            <Card launch={launch} />
           </li>
         ))}
       </ul>
