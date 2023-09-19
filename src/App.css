@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+body {
+  background-image: url("../public/img/background-large.jpg");
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -2,16 +2,15 @@
 /* Card container */
 .launch-card {
   position: relative;
-  padding: 1rem;
   width: 150px;
   height: 100px;
   margin: 0 auto;
   margin-top: 2rem;
   padding: 5rem 2rem;
   text-align: left;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid #a1ecfb;
   border-radius: 2rem;
-  background-color: rgba(0, 0, 0, 0.471);
+  background-color: rgba(0, 0, 0, 0.784);
 }
 
 /* Image container */
@@ -33,33 +32,46 @@
 }
 
 /* Card title */
-h2 {
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 0.3rem;
+.launch-card h2 {
+  font-size: 1.2rem;
+  text-overflow: ellipsis;
+  color: #a1ecfb;
+  margin-bottom: 0.4rem;
 }
 
-p {
+/* General text style */
+.launch-card p {
   color: white;
   margin-top: 1rem;
 }
+
 /* Date */
-.date {
+.launch-card .date {
   margin-bottom: 1rem;
-  color: #8c8b8b;
+  color: #a3e5f2;
 }
 
-.details {
+/* Details with text ellipsis */
+.launch-card .details {
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: wrap;
+  color: #a1ecfb;
+  font-size: 0.7rem;
 }
 
 /* Style for success status */
-.success {
-  color: green; /* Change to your preferred color for success */
+.launch-card .success {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: end;
+  color: #a1fbd7; /* Change to your preferred color for success */
 }
 
 /* Style for failure status */
-.failure {
-  color: red; /* Change to your preferred color for failure */
+.launch-card .failure {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: end;
+  color: #870000; /* Change to your preferred color for failure */
 }
