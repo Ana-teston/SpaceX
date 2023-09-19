@@ -1,0 +1,39 @@
+.container {
+  color: black;
+  background-color: rgba(3, 2, 2, 0.556);
+  padding-left: 1rem; /* 16px */
+  padding-right: 1rem; /* 16px */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of card items */
+}
+
+.title {
+  color: black;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem; /* Add some spacing between title and cards */
+}
+
+.cardWrapper {
+  display: inline-flex; /* Use inline-flex for horizontal alignment */
+  padding-top: 1.7rem;
+  padding-bottom: 1.5rem;
+  margin-top: 1.5rem; /* 24px */
+  margin-right: 3rem; /* 12px */
+}
+
+.card {
+  flex: 0 0 auto; /* Prevent cards from growing or shrinking */
+  margin-right: 3rem; /* Add some spacing between cards */
+}
+
+.card:last-child {
+  margin-right: 0; /* Remove right margin from the last card */
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 4rem; /* 64px */
+    padding-right: 4rem; /* 64px */
+  }
+}

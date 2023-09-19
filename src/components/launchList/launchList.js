@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchSpaceXLaunches } from '../../api/spaceX';
-import Card from '../card/card.component';
+
+import SectionCards from '../card/section';
 
 function LaunchList() {
   const [launches, setLaunches] = useState([]);
@@ -25,41 +26,19 @@ function LaunchList() {
     return <p>Loading...</p>; // Display a loading message while fetching data
   }
 
+
+  const currentDate = new Date();
   // Separate launches into three categories: success, failure, and future launches
   const successLaunches = launches.filter((launch) => launch.success);
   const failureLaunches = launches.filter((launch) => !launch.success);
-  const futureLaunches = launches.filter((launch) => new Date(launch.date_local) > new Date());
+  const futureLaunches = launches.filter((launch) => launch.upcoming === true);
+
 
   return (
-    <div>
-      <h1>SpaceX Launches</h1>
-
-      <h2>Successful Launches: </h2>
-      <ul>
-        {successLaunches.map((launch) => (
-          <li key={launch.id}>
-            <Card launch={launch} />
-          </li>
-        ))}
-      </ul>
-
-      <h2>Failure Launches: </h2>
-      <ul>
-        {failureLaunches.map((launch) => (
-          <li key={launch.id}>
-            <Card launch={launch} />
-          </li>
-        ))}
-      </ul>
-
-      <h2>Future Launches: </h2>
-      <ul>
-        {futureLaunches.map((launch) => (
-          <li key={launch.id}>
-            <Card launch={launch} />
-          </li>
-        ))}
-      </ul>
+    <div className="sectionWrapper">
+      <SectionCards title="Successful Launches" launches={successLaunches} size="small" />
+      <SectionCards title="Failed Launches" launches={failureLaunches} size="small" />
+      <SectionCards title="Future Launches" launches={futureLaunches} size="small" />
     </div>
   );
 }
