@@ -20,18 +20,19 @@ function App() {
   }, []);
 
   const handleSearch = (value) => {
-    // If the Enter key is pressed (key code 13), clear the search field
-  if (value === "" || value.trim() === "") {
-    setSearchLaunch("");
-  } else {
     setSearchLaunch(value);
-  }
   };
 
   // Filter launches based on the searchLaunch
   const filteredLaunches = launches.filter((launch) =>
     launch.name.toLowerCase().includes(searchLaunch.toLowerCase())
   );
+
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  }
+
 
   return (
     <>
@@ -43,11 +44,14 @@ function App() {
         <ul>
           {filteredLaunches.map((launch) => (
             <li key={launch.id}>
-              <img src={launch.links.patch.small} alt="Launch Patch" />
-              <p>Rocket: {launch.name}</p>
-              <p>Launch Status: {launch.success ? 'Success' : 'Failure'}</p>
-              <p>Details: {launch.details}</p>
-            </li>
+            <img src={launch.flickr?.original?.[0] ||
+          (launch.links?.patch?.small)} alt="Launch" />
+            <p>Rocket: {launch.name}</p>
+            <p>Flight Number: {launch.flight_number} </p>
+            <p>Date: {formatDate(launch.date_local)}</p>
+            <p>Launch Status: {launch.success ? 'Success' : 'Failure'}</p>
+            <p>Details: {launch.details}</p>
+          </li>
           ))}
         </ul>
       ) : (
