@@ -50,18 +50,16 @@ The `launchList.js` file contains the LaunchList component for displaying SpaceX
 - Filters and sorts the data based on user preferences.
 - Handles user interactions.
 
-#### Example Usage
+#### Features
+- Search Launches: Use the search bar to search for specific SpaceX launches by name. The application will display matching results in real-time.
+  - SearchBox
+  The SearchBox component is a reusable search bar that allows users to search for SpaceX launches by rocket name. It provides real-time search functionality by updating the results as the user types.
 
-```javascript
-// Example usage of the LaunchList component
-const ExampleApp = () => {
-  // Fetch SpaceX launch data and pass it to LaunchList
-  // ...
-  return (
-    <div>
-      <h1>SpaceX Launches</h1>
-      <LaunchList launches={launchData} />
-    </div>
-  );
-};
+- Categorize Launches: SpaceX launches are categorized into three sections:
+
+  -  Successful Launches: Displays launches that were successful.
+  - Failed Launches: Displays launches that were not successful.
+  - Future Launches: Displays launches that are scheduled for the future.
+  - Launch Details: View detailed information about each launch, including rocket name, flight number, launch date, launch status (success or failure), and launch details.
+
 # SpaceX

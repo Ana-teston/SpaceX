@@ -20,7 +20,12 @@ function App() {
   }, []);
 
   const handleSearch = (value) => {
+    // If the Enter key is pressed (key code 13), clear the search field
+  if (value === "" || value.trim() === "") {
+    setSearchLaunch("");
+  } else {
     setSearchLaunch(value);
+  }
   };
 
   // Filter launches based on the searchLaunch
