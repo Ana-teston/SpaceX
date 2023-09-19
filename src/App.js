@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import './App.css';
 import { fetchSpaceXLaunches } from './api/spaceX';
 import SearchBox from './components/search/search';
 import LaunchList from './components/launchList/launchList';
 
-function App() {
+const App = () => {
   const [launches, setLaunches] = useState([]);
   const [searchLaunch, setSearchLaunch] = useState("");
 

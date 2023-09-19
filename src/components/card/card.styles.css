@@ -1,30 +1,77 @@
+
+/* Card container */
 .launch-card {
-  background-color: #f5f5f5; /* Background color */
-  border: 1px solid #ccc; /* Border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 16px; /* Padding */
-  margin: 16px 0; /* Margin to create space between cards */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for elevation */
+  position: relative;
+  width: 150px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 5rem 2rem;
+  text-align: left;
+  border: 1px solid #a1ecfb;
+  border-radius: 2rem;
+  background-color: rgba(0, 0, 0, 0.784);
 }
 
-.launch-card img {
-  max-width: 100%; /* Ensure the image doesn't overflow the card */
-  border-radius: 8px; /* Rounded corners for the image */
-  margin-bottom: 12px; /* Spacing below the image */
+/* Image container */
+.image-container {
+  position: absolute;
+  top: -4rem; /* Adjust this value to control the vertical position */
+  left: 1rem; /* Adjust this value to control the horizontal position */
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.114);
 }
 
+/* Image within the container */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card title */
+.launch-card h2 {
+  font-size: 1.2rem;
+  text-overflow: ellipsis;
+  color: #a1ecfb;
+  margin-bottom: 0.4rem;
+}
+
+/* General text style */
 .launch-card p {
-  margin: 8px 0; /* Spacing between paragraphs */
+  color: white;
+  margin-top: 1rem;
 }
 
-/* Style for success launches */
-.launch-card.success {
-  background-color: #d3f0a3; /* Greenish background for success */
-  border-color: #9edc5f; /* Green border color */
+/* Date */
+.launch-card .date {
+  margin-bottom: 1rem;
+  color: #a3e5f2;
 }
 
-/* Style for failure launches */
-.launch-card.failure {
-  background-color: #f0a3a3; /* Reddish background for failure */
-  border-color: #dc5f5f; /* Red border color */
+/* Details with text ellipsis */
+.launch-card .details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  color: #a1ecfb;
+  font-size: 0.7rem;
+}
+
+/* Style for success status */
+.launch-card .success {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: end;
+  color: #a1fbd7; /* Change to your preferred color for success */
+}
+
+/* Style for failure status */
+.launch-card .failure {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: end;
+  color: #870000; /* Change to your preferred color for failure */
 }
