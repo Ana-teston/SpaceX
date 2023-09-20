@@ -1,0 +1,29 @@
+/* Style the search container */
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the search icon */
+.search-icon {
+  cursor: pointer;
+  position: absolute;
+  color: #f0f0f0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #A0ECFB;
+}
+
+/* Style the search input */
+input {
+  padding: 0.3rem;
+  padding-left: 1.6rem;
+  border: 2px #A0ECFB;
+  border-radius: 1.3rem;
+  background-color: #f6f7f7ea;
+}

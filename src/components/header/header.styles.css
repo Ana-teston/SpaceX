@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #33333339;
+  width: auto;
+  padding: 2rem;
+}
+
+.logo-container {
+  max-width: 50px;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .header {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 798px) {
+  .header {
+    max-width: 798px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 300px) {
+  .header {
+    max-width: 300px;
+    margin: auto;
+  }
+}

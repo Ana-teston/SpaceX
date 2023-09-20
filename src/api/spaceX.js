@@ -1,6 +1,6 @@
 const SPACE_X_API_BASE_URL = 'https://api.spacexdata.com/v5/launches';
 
-// Function to fetch all launches
+
 export const fetchSpaceXLaunches = async () => {
   try {
     const response = await fetch(SPACE_X_API_BASE_URL);

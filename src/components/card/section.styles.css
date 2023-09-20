@@ -1,8 +1,5 @@
 .container {
   color: #a1ecfb;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
   overflow-x: scroll;
 }
 
@@ -10,19 +7,16 @@
   color: #a1ecfb;
   font-weight: 700;
   font-size: 2rem;
-
 }
 
 .cardWrapper {
-  display: inline-flex; /* Use inline-flex for horizontal alignment */
+  display: inline-flex;
+  margin: 2rem 0;
   padding-top: 1.7rem;
-  padding-bottom: 1.7rem;
-  margin-top: 1.5rem;
-  margin-right: 3rem;
+  padding-bottom: 1.5rem;
   display: -moz-grid-line;
   gap: 35px;
-  padding-bottom: 10px;
-  padding-top: 5px;
+
 }
 
 .card {
@@ -39,12 +33,12 @@
 }
 
 .card:last-child {
-  margin-right: 0; /* Remove right margin from the last card */
+  margin-right: 0;
 }
 
 @media (min-width: 768px) {
   .container {
-    padding-left: 4rem; /* 64px */
-    padding-right: 4rem; /* 64px */
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
