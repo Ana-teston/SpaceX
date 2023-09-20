@@ -27,7 +27,7 @@ function LaunchList() {
   // Separate launches into three categories: success, failure, and future launches
   const successLaunches = launches.filter((launch) => launch.success);
   const failureLaunches = launches.filter((launch) => !launch.success);
-  const futureLaunches = launches.filter((launch) => launch.upcoming === true);
+  //const futureLaunches = launches.filter((launch) => launch.upcoming === true);
 
   return (
     <div className="sectionWrapper">
@@ -37,8 +37,6 @@ function LaunchList() {
       <h3 className="title">Failed Launches</h3>
       <SectionCards launches={failureLaunches} />
 
-      <h3 className="title">Future Launches</h3>
-      <SectionCards launches={futureLaunches} />
     </div>
   );
 }
