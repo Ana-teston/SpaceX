@@ -4,6 +4,7 @@ import { fetchSpaceXLaunches } from "./api/spaceX"
 import Header from "./components/header/header";
 import LaunchList from "./components/launchList/launchList";
 import ResultsPage from "./components/resultsPage/resultsPage";
+import Home from "./routes/home/home";
 
 const App = () => {
   const [launches, setLaunches] = useState([]);
@@ -36,6 +37,7 @@ const App = () => {
         )} />
       )}
     <div className="layout">
+      <Home />
       <LaunchList />
     </div>
   </>
