@@ -35,7 +35,7 @@ const App = () => {
         <ResultsPage filteredLaunches={launches.filter((launch) =>
           launch.name.toLowerCase().includes(searchLaunch.toLowerCase())
         )} />
-      )}
+      )};
     <div className="layout">
       <Home />
       <LaunchList />

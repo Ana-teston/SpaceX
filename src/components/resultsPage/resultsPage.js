@@ -1,12 +1,22 @@
 import React from 'react';
 import Card from '../card/card.component';
-import "./resultsPage.styles.css"
+import "./resultsPage.styles.css";
+import Xmark from "../../img/xmark.svg";
 
 const ResultsPage = ({ filteredLaunches }) => {
   return (
     <>
       <div className="layout">
-        <h2 className="text-results">Rockets Results</h2>
+        <div className="rocket-result">
+            <div>
+                <h3 className="text-results">Rockets Results</h3>
+            </div>
+            <div>
+                <a href="/">
+                    <img src={Xmark} alt="back to home" className="X-close" />
+                </a>
+            </div>
+        </div>
           {filteredLaunches ? (
               <div className="filtered-results-section">
                   {filteredLaunches.map((launch) => (
@@ -14,7 +24,9 @@ const ResultsPage = ({ filteredLaunches }) => {
                   ))}
               </div>
           ) : (
-              <p>No data available</p>
+              <div className="filtered-results-section">
+                  <p className="no-found">No data available</p>
+              </div>
           )}
       </div>
     </>

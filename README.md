@@ -65,6 +65,21 @@ The `launchList.js` file contains the LaunchList component for displaying SpaceX
 ### Launch Details
 - View detailed information about each launch, including rocket name, flight number, launch date, launch status (success or failure), and launch rockets details.
 
+## Testing
+- Usage Cypress:
+
+  "cypress:open": "./node_modules/.bin/cypress open",
+  "cypress:run": "./node_modules/.bin/cypress run",
+  "test:ci": "yarn run cypress:run",
+  "test:ci:firefox": "yarn run cypress:run -- --browser firefox",
+  "test:ci:record": "yarn run cypress:run -- --record"
+
+- Cypress is used for end-to-end testing in this project. Cypress provides a powerful testing framework for your web applications.
+
+- To open the Cypress test runner, run the following command in your project directory:
+
+- Click on a test file to run the tests, and Cypress will open a new browser window to execute the tests / components.
+
 ## Deployment
 
 You can deploy this SpaceX Launches App on [Vercel](https://vercel.com/) using your Git repository. Here's how:

@@ -11,7 +11,7 @@ const Home = ()=> {
                 <a className="btn btn-flat" href="#">Login</a>
             </div>
             <div className="image-rocket">
-                <img src={ImgRocket}/>
+                <img src={ImgRocket} alt="Animated Image" id="animated-image" />
             </div>
         </div>
     )
