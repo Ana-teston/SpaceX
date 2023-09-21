@@ -7,11 +7,15 @@ const ResultsPage = ({ filteredLaunches }) => {
     <>
       <div className="layout">
         <h2 className="text-results">Rockets Results</h2>
-        <div className="filtered-results-section">
-          {filteredLaunches.map((launch) => (
-            <Card key={launch.id} launch={launch} />
-          ))}
-        </div>
+          {filteredLaunches ? (
+              <div className="filtered-results-section">
+                  {filteredLaunches.map((launch) => (
+                      <Card key={launch.id} launch={launch} />
+                  ))}
+              </div>
+          ) : (
+              <p>No data available</p>
+          )}
       </div>
     </>
   );
