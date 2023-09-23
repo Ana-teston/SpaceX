@@ -1,24 +1,21 @@
 import React from 'react';
 import logo from '../../spacex_logo.svg';
-import SearchBox from '../search/search';
 import "./header.styles.css";
+import { Link } from "react-router-dom";
 
-const Header = ({onSearch}) => {
+const Header = () => {
     return (
         <div className="header navbar-expand-sm navbar-light navbar">
             <div className="logo-container">
-                <a href="/">
+                <Link href="/">
                     <img src={logo} alt="Logo" width="50" height="50"/>
-                </a>
-            </div>
-            <div className="navbar">
-                <SearchBox placeholder="Search Launches..." onChangeHandler={onSearch}/>
+                </Link>
             </div>
             <div>
-                <a className="btn btn-flat" href="#">Login</a>
+                <Link className="btn btn-flat" href="#">Login</Link>
             </div>
         </div>
     );
-}
+};
 
 export default Header;

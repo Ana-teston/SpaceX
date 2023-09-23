@@ -4,13 +4,12 @@
     background-position: center;
     justify-content: center;
     align-items: center;
-    padding: 4rem 0;
 }
 
 .container-home {
     flex: 1; /* Expand and take available space */
     text-align: left;
-    padding-left: 5rem;
+    padding-left: 2rem;
     width: 100%;
 }
 
@@ -60,9 +59,10 @@ a {
     }
     .banner h1, p {
         font-size: 1.6rem;
+
     }
     .container-home {
-        padding-left: 0;
+        padding-left: 1rem;
     }
 
 }

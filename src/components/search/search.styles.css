@@ -2,28 +2,20 @@
 .search-container {
   position: relative;
   display: inline-block;
-}
-
-/* Style the search icon */
-.search-icon {
-  cursor: pointer;
-  position: absolute;
-  color: #f0f0f0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #A0ECFB;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Style the search input */
 input {
-  padding: 0.3rem;
-  padding-left: 1.6rem;
-  border: 2px #A0ECFB;
-  border-radius: 1.3rem;
+  padding: 0.5rem 2.5rem;
+  border-radius: 4px;
   background-color: #f6f7f7ea;
+  border: 2px solid #670BFF;
+}
+
+.search-box::placeholder {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }

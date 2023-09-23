@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../card/card.component';
+import Card from '../../components/card/card.component';
 import "./resultsPage.styles.css";
 import Xmark from "../../img/xmark.svg";
 

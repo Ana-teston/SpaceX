@@ -3,3 +3,5 @@ const RocketDetails = () => {
         <div>Rocket details</div>
     )
 }
+
+export default RocketDetails;
