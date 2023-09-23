@@ -27,7 +27,6 @@ const App = () => {
             <Route path="/*" element={ <Header /> } />
             <Route path="/" element={<Home/>}/>
             <Route path="/results" element={<ResultsPage launches={launches} />} />
-            <Route path="/rocket/:id" element={<RocketDetails/>}/>
         </Routes>
     );
 };
