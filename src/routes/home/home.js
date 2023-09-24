@@ -13,7 +13,7 @@ const Home = ()=> {
                     <div className="container-home">
                         <h1>Let's check the Rockets!</h1>
                         <p>Change your life to learn about SpaceX API!</p>
-                        <a className="btn btn-flat" href="#">Login</a>
+                        <a className="btn btn-flat" href="/">Login</a>
                     </div>
                     <div className="image-rocket">
                         <img src={ImgRocket} alt="Animated Image" id="animated-image" />

@@ -47,7 +47,7 @@ The `launchList.js` file contains the LaunchList component for displaying SpaceX
 #### Component Logic
 
 - Fetches and displays SpaceX launch data.
-- Filters and sorts the data based on user preferences.
+- Filters and sorts the data based on user preferences by launch name.
 - Handles user interactions.
 
 ## Features

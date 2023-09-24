@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Header from "./routes/header/header";
 import Home from "./routes/home/home";
-import RocketDetails from "./routes/rocketPage/rocketDetailsPage";
 import { fetchSpaceXLaunches } from "./api/spaceX";
 import ResultsPage from "./routes/resultsPage/resultsPage";
 

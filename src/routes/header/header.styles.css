@@ -4,8 +4,7 @@
   align-items: center;
   background-color: rgba(12, 44, 51, 0.28);
   width: auto;
-  height: 2rem;
-  padding: 0 2rem;
+  padding: 2rem 2rem;
 }
 
 .logo-container {
@@ -37,13 +36,6 @@ a {
   margin: 0 2rem;
 }
 
-@media (max-width: 1200px) {
-  .header {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem;
-  }
-}
 @media (max-width: 2000px) {
   .header {
     max-width: 2000px;
@@ -52,23 +44,27 @@ a {
   }
 }
 
+@media (max-width: 1200px) {
+  .header {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+  }
+}
+
 @media (max-width: 798px) {
   .header {
     max-width: 798px;
+    padding: 0.5rem 1.5rem;
     margin: auto;
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 370px) {
   .header {
     max-width: 300px;
     margin: auto;
   }
 }
 
-@media (max-width: 798px) {
-  .btn-flat {
-    padding: 0.5rem 1.5rem;
-    margin: auto;
-  }
-}
+
