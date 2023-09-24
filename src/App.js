@@ -1,45 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect} from "react";
+import { Route, Routes } from "react-router-dom";
 import './App.css';
-import { fetchSpaceXLaunches } from "./api/spaceX"
-import Header from "./components/header/header";
-import LaunchList from "./components/launchList/launchList";
-import ResultsPage from "./components/resultsPage/resultsPage";
+import Header from "./routes/header/header";
+import Home from "./routes/home/home";
+import { fetchSpaceXLaunches } from "./api/spaceX";
+import ResultsPage from "./routes/resultsPage/resultsPage";
 
 const App = () => {
-  const [launches, setLaunches] = useState([]);
-  const [searchLaunch, setSearchLaunch] = useState("");
-  const [showResultsPage, setShowResultsPage] = useState(false);
+    const [launches, setLaunches] = useState([]);
 
-  useEffect(() => {
-  async function fetchData() {
-    try {
-      const data = await fetchSpaceXLaunches();
-      setLaunches(data);
-    } catch (error) {
-      console.error('Error fetching SpaceX launches:', error)
-    }
-  }
-  fetchData();
-  }, []);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const data = await fetchSpaceXLaunches();
+                setLaunches(data);
+            } catch (error) {
+                console.error('Error fetching SpaceX launches:', error)
+            }
+        }
+        fetchData();
+    }, []);
 
-  const handleSearch = (value) => {
-  setSearchLaunch(value);
-  setShowResultsPage(value.trim() !== "");
-  };
-
-  return (
-  <>
-  <Header onSearch={handleSearch} />
-      {showResultsPage && (
-        <ResultsPage filteredLaunches={launches.filter((launch) =>
-          launch.name.toLowerCase().includes(searchLaunch.toLowerCase())
-        )} />
-      )}
-    <div className="layout">
-      <LaunchList />
-    </div>
-  </>
-  );
-  }
+    return (
+        <Routes>
+            <Route path="/*" element={ <Header /> } />
+            <Route path="/" element={<Home/>}/>
+            <Route path="/results" element={<ResultsPage launches={launches} />} />
+        </Routes>
+    );
+};
 
 export default App;
+

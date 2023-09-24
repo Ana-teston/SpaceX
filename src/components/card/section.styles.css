@@ -5,8 +5,34 @@
 
 .title {
   color: #a1ecfb;
-  font-weight: 700;
-  font-size: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 0;
+  padding-left: 2rem;
+}
+.filtered-results-section {
+  flex: 1; /* Grow to fill available space */
+}
+
+.no-found-container {
+   /* Add spacing between input and message */
+}
+
+.filtered-results-text h2 {
+  font-size: 1.3rem;
+  color: #9DE9F7;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 4rem;
+  padding-left: 2rem;
+}
+
+p {
+  font-size: 1.3rem;
+  color: #9DE9F7;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .cardWrapper {
@@ -36,9 +62,24 @@
   margin-right: 0;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1256px) {
   .container {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .title {
+    padding-left: 1rem;
   }
 }
+
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .title {
+    padding-left: 1rem;
+  }
+}
+

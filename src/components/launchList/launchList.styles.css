@@ -8,3 +8,11 @@
   position:absolute;
   margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+  .title h3 {
+    font-size: 0.8rem;
+    padding-left: 0;
+  }
+
+}
