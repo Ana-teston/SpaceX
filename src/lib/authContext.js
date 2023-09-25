@@ -39,7 +39,7 @@ export const useFetchUser = () => {
         return () => {
             isMounted = false;
         }
-    }, []);
+    }, [userState]);
 
     return data;
 }

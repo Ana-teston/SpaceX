@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import {setToken, unsetToken} from "../../lib/auth";
 import {fetcher} from "../../lib/fetcher";
 import { useUser } from "../../lib/authContext";
+import env from "react-dotenv";
 
 
 
@@ -22,7 +23,7 @@ const Header = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const responseData = await fetcher(`${process.env.PUBLIC_STRAPI_URL}/auth/local`, {
+        const responseData = await fetcher(`http://localhost:1337/api/auth/local`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,10 +32,14 @@ const Header = () => {
                     identifier: data.identifier,
                     password: data.password,
                 }),
-            }
-        );
-        console.log(responseData);
-        setToken(responseData)
+            });
+        if (responseData && responseData.user) {
+            console.log(responseData);
+            setToken(responseData);
+        } else {
+            // Handle the case where responseData or responseData.user is undefined
+            console.error("Invalid responseData:", responseData);
+        }
     };
 
     const logout = () => {

@@ -10,7 +10,7 @@ export const setToken = (data) => {
     Cookies.set("jwt", data.jwt);
 
     if (Cookies.get("username")) {
-        Router.reload("/");
+        window.location.reload();
     }
 };
 
@@ -22,7 +22,7 @@ export const unsetToken = () => {
     Cookies.remove("username");
     Cookies.remove("jwt");
 
-    Router.reload("/")
+    window.location.reload();
 }
 export const getUserFromLocalCookie = () => {
     return Cookies.get("username");

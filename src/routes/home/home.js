@@ -2,12 +2,14 @@ import React from "react";
 import "./home.styles.css"
 import ImgRocket from "../../img/Rocket-by-andy-hermawan-bVBvv5xlX3g-unsplash_Background_Removed.png"
 import LaunchList from "../../components/launchList/launchList";
-import Header from "../header/header";
+import Layout from "../../components/layout/layout";
+import {useFetchUser} from "../../lib/authContext";
 
-const Home = ()=> {
+const Home = () => {
+    const { user } = useFetchUser()
     return (
         <>
-            <Header />
+            <Layout user={user}>
             <div className="layout">
                 <div className="banner">
                     <div className="container-home">
@@ -16,13 +18,15 @@ const Home = ()=> {
                         <a className="btn btn-flat" href="/">Login</a>
                     </div>
                     <div className="image-rocket">
-                        <img src={ImgRocket} alt="Animated Image" id="animated-image" />
+                        <img src={ImgRocket} alt="Animated Image" id="animated-image"/>
                     </div>
                 </div>
             </div>
             <div className="layout">
-                <LaunchList />
-            </div></>
+                <LaunchList/>
+            </div>
+            </Layout>
+        </>
     )
 };
 

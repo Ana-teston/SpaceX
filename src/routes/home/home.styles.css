@@ -7,14 +7,11 @@
 }
 
 .container-home {
-    flex: 1; /* Expand and take available space */
     text-align: left;
     padding-left: 2rem;
-    width: 100%;
 }
 
 .image-rocket {
-    flex: 1;
     max-width: 576px;
     max-height: 324px;
 }
@@ -54,7 +51,7 @@ a {
 }
 
 @media (max-width: 768px) {
-    .image-rocket {
+    .image-rocket div {
         display: none;
     }
     .banner h1, p {

@@ -22,11 +22,14 @@ const App = () => {
     }, []);
 
     return (
-        <Routes>
-            <Route path="/*" element={ <Header /> } />
-            <Route path="/" element={<Home/>}/>
-            <Route path="/results" element={<ResultsPage launches={launches} />} />
-        </Routes>
+        <>
+            <Routes>
+                <Route path="/*" element={ <Header /> } />
+                <Route path="/" element={<Home/>}/>
+                <Route path="/results" element={<ResultsPage launches={launches} />} />
+            </Routes>
+        </>
+
     );
 };
 

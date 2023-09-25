@@ -6,8 +6,8 @@ const SectionCards = (props) => {
   const {title, launches = [] } = props;
 
   return (
-    <section className="container">
-      <h2 className="title">{title}</h2>
+    <section className="container p-4 mx-auto">
+      <h2 className="title p-2 mx-auto">{title}</h2>
       <div className="cardWrapper">
         {launches.map((launch, idx) => (
           <Card

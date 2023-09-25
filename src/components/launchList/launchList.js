@@ -4,6 +4,7 @@ import SectionCards from '../card/section';
 import SearchBox from "../search/search";
 import Card from "../card/card.component";
 import Xmark from "../../img/xmark.svg";
+import Layout from "../layout/layout";
 
 function LaunchList() {
   const [launches, setLaunches] = useState([]);
@@ -45,7 +46,7 @@ function LaunchList() {
 
   return (
       <>
-        <div className="sectionWrapper">
+        <div className="sectionWrapper mx-4">
           <SearchBox
               placeholder="Search launches..."
               onSearch={handleSearch}
@@ -63,7 +64,7 @@ function LaunchList() {
               ""
           )}
         </div>
-          <div className="sectionWrapper">
+          <div className="sectionWrapper mt-5">
             <h3 className="title">Successfull Launches</h3>
             <SectionCards launches={successLaunches} />
 
