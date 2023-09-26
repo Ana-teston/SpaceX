@@ -2,10 +2,9 @@ import React from "react";
 import Header from "../../routes/header/header";
 import {UserProvider} from "../../lib/authContext";
 
-const Layout = ({ children, user }) => {
+const LayoutRegister = ({ children, user }) => {
     return (
         < UserProvider value={{user}}>
-            <Header user={user}/>
             <main className="px-4">
                 <div className="lg:flex lg:justify-center lg:items-center mx-auto w-full lg:w-2/4 rounded-lg p-4 lg:p-16">
                     <div className="font-medium">{children}</div>
@@ -15,4 +14,4 @@ const Layout = ({ children, user }) => {
     )
 }
 
-export default Layout;
+export default LayoutRegister;

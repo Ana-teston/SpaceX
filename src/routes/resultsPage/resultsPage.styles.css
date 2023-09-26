@@ -55,12 +55,12 @@ a {
 
 @media (max-width: 768px) {
   .filtered-results-section {
-    grid-template-columns: repeat(3, 180px);
+    grid-template-columns: repeat(2, 180px);
     gap: 0.7rem;
   }
 }
 
-@media (max-width: 368px) {
+@media (max-width: 374px) {
   .filtered-results-section {
     grid-template-columns: repeat(1, 180px);
     gap: 0.3rem;

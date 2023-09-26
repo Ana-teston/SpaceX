@@ -1,5 +1,5 @@
-import {Router} from "react-router-dom";
 import Cookies from "js-cookie";
+import {fetcher} from "./fetcher";
 
 export const setToken = (data) => {
     if (typeof window === "undefined") {
@@ -25,14 +25,28 @@ export const unsetToken = () => {
     window.location.reload();
 }
 export const getUserFromLocalCookie = () => {
-    return Cookies.get("username");
+    const jwt = getTokenFromLocalCookie();
+    if (jwt) {
+        return fetcher(`http://localhost:1337/api/users/me`, {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${jwt}`,
+            },
+        })
+            .then((data) => {
+                return data.username;
+            }).catch((error) =>
+                console.error(error));
+    } else {
+        return;
+    }
 };
 
 export const getIdFromLocalCookie = () => {
     return Cookies.get("id");
 };
 
-export const getJwtFromLocalCookie = () => {
+export const getTokenFromLocalCookie = () => {
     return Cookies.get("jwt");
 };
 

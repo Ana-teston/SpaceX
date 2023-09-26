@@ -5,6 +5,7 @@ import Header from "./routes/header/header";
 import Home from "./routes/home/home";
 import { fetchSpaceXLaunches } from "./api/spaceX";
 import ResultsPage from "./routes/resultsPage/resultsPage";
+import Register from "./components/register/register";
 
 const App = () => {
     const [launches, setLaunches] = useState([]);
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path="/*" element={ <Header /> } />
                 <Route path="/" element={<Home/>}/>
                 <Route path="/results" element={<ResultsPage launches={launches} />} />
+                <Route path="/register" element={<Register/>} />
             </Routes>
         </>
 

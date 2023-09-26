@@ -28,14 +28,14 @@
     color: #9DE9F7;
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
 }
 
 .btn-flat {
     color: white;
     font-size: large;
     font-weight: bold;
-    padding: 0.5rem 2.5rem;
+    padding: 1rem 2.5rem;
     border-radius: 4px;
     background: #670BFF;
     transition: background 0.3s ease;
