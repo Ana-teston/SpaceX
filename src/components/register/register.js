@@ -57,8 +57,8 @@ const Register = ({onRegister}) => {
                     </div>
                     <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                         <div>
-                            <label htmlFor="identifier" className="block text-sm font-medium text-gray-700">
-                                Email or Username
+                            <label htmlFor="identifier" className="block text-sm font-medium text-gray-300">
+                                Username
                             </label>
                             <input
                                 type="text"
@@ -67,6 +67,9 @@ const Register = ({onRegister}) => {
                                 className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full text-gray-700 shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required
                             />
+                            <label htmlFor="identifier" className="block text-sm font-medium text-gray-300">
+                                Email
+                            </label>
                             <input
                                 type="text"
                                 name="email"
@@ -76,7 +79,7 @@ const Register = ({onRegister}) => {
                             />
                         </div>
                         <div>
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-300">
                                 Password
                             </label>
                             <input

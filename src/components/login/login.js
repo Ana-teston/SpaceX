@@ -3,12 +3,11 @@ import { fetcher } from '../../lib/fetcher';
 import { setToken } from '../../lib/auth';
 import { Navigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({onLogin}) => {
     const [data, setData] = useState({
         identifier: '',
         password: '',
     });
-    const [ setShowLoginForm ] = useState(null)
     const [loginSuccess, setLoginSuccess] = useState(false);
 
     const handleLoginChange = (e) => {
@@ -45,22 +44,18 @@ const Login = () => {
         return <Navigate to="/" />;
     }
 
-    const handlePopupClose = () => {
-        setShowLoginForm(false); // Close the login form when needed
-    };
-
     return (
         <div className="container mx-auto mt-10 popup-container">
             <div className="max-w-md mx-auto popup-content">
                 <div className="text-center">
-                    <button className="close-button" onClick={handlePopupClose}>
+                    <button className="close-button" onClick={() => onLogin(null)}>
                         Close
                     </button>
                     <h2 className="text-2xl font-semibold mt-4">Login to Your Account</h2>
                 </div>
                 <form onSubmit={handleSubmitLogin} className="mt-8 space-y-6">
                     <div>
-                        <label htmlFor="identifier" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="identifier" className="block text-sm font-medium text-gray-300">
                             Email or Username
                         </label>
                         <input
@@ -74,7 +69,7 @@ const Login = () => {
                         />
                     </div>
                     <div>
-                        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-300">
                             Password
                         </label>
                         <input
