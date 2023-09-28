@@ -7,5 +7,10 @@ module.exports = {
     extend: {},
   },
   plugins: [require("@tailwindcss/forms")({strategy:"class"})],
-}
-
+  extend: {
+    // Define your custom colors here
+    colors: {
+      customBlue: '#9DE9F7',
+    },
+  },
+};

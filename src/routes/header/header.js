@@ -31,16 +31,16 @@ const Header = () => {
     };
 
     return (
-        <div className="header flex justify-between mx-4 my-2 flex-shrink-0 navbar-expand-sm navbar-light navbar">
-            <div className="logo-container">
+        <div className="header flex justify-between mx-12 my-5 px-12 flex-shrink-0 navbar-expand-sm navbar-light navbar lg:mx-12 md:px-12">
+            <div className="logo-container hidden sm:block">
                 <Link to="/">
                     <img src={logo} alt="Logo" width="50" height="50" />
                 </Link>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex space-x-2  md:mx-12 md:px-12">
             {user ? (
                 <div>
-                    <button className="group relative btn-flat hover:bg-purple-900 hover:text-white" onClick={logout}>
+                    <button className="group relative flex-shrink-0 btn-flat hover:bg-purple-900 hover:text-white text-xs sm:text-base" onClick={logout}>
                         Logout
                     </button>
                 </div>
@@ -53,11 +53,11 @@ const Header = () => {
                     {!activeForm && (
                         <>
                 <button
-                    className="btn-flat hover:bg-purple-900 hover:text-white"
+                    className="btn-flat hover:bg-purple-900 flex-shrink-0 hover:text-white text-xs sm:text-base"
                     onClick={() => handleFormButtonClick('login')}
                 >Login</button>
                 <button
-                    className="btn-flat hover:bg-purple-900 hover:text-white"
+                    className="btn-flat hover:bg-purple-900 flex-shrink-0 hover:text-white text-xs sm:text-base"
                     onClick={() => handleFormButtonClick('register')}
                 >Register</button>
             </>

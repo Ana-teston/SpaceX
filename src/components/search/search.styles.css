@@ -2,7 +2,6 @@
 .search-container {
   position: relative;
   display: inline-block;
-  padding-left: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -22,7 +21,6 @@ input {
 
 @media (max-width: 768px) {
   .search-container {
-    padding-left: 0.5rem;
     padding-bottom: 2rem;
     margin: auto;
   }

@@ -2,22 +2,19 @@
     display: flex;
     background-size: cover;
     background-position: center;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .container-home {
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
-.image-rocket {
-    max-width: 576px;
-    max-height: 324px;
-}
+
 .banner h1 {
     margin: 0;
-    color: #9DE9F7;
+    color: #670BFF;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 2rem;
     font-weight: bold;
@@ -35,7 +32,7 @@
     color: white;
     font-size: large;
     font-weight: bold;
-    padding: 1rem 2.5rem;
+    padding: 1rem 1.5rem;
     border-radius: 4px;
     background: #670BFF;
     transition: background 0.3s ease;
@@ -50,18 +47,20 @@ a {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
-    .image-rocket div {
-        display: none;
+@media (max-width: 474px) {
+    .banner h1 {
+        font-size: 1.5rem;
+        margin: 10px;
     }
-    .banner h1, p {
-        font-size: 1.6rem;
-
+    .banner p {
+        font-size: 1rem;
+        margin: 10px;
     }
-    .container-home {
-        padding-left: 1rem;
+    .btn-flat {
+        max-width: 300px;
+        padding: 0.8rem 0.9rem;
+        margin: 8px;
     }
-
 }
 
 /* Define the animation */

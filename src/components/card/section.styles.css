@@ -15,10 +15,6 @@
   flex: 1; /* Grow to fill available space */
 }
 
-.no-found-container {
-   /* Add spacing between input and message */
-}
-
 .filtered-results-text h2 {
   font-size: 1.3rem;
   color: #9DE9F7;

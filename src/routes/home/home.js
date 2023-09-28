@@ -10,21 +10,17 @@ const Home = () => {
     return (
         <>
             <Layout user={user}>
-                <div className="layout">
-                    <div className="banner">
-                        <div className="container-home">
-                            <h1>Let's check the Rockets!</h1>
-                            <p>Journey into the cosmos with SpaceX's engaging space exploration.</p>
-                            <a className="btn btn-flat" href="https://www.spacex.com/" target="_blank" >SpaceX's</a>
-                        </div>
-                        <div className="image-rocket">
-                            <img src={ImgRocket} alt="Animated Image" id="animated-image"/>
-                        </div>
+                <div className="banner rounded-lg p-4 lg:p-16 ">
+                    <div className="">
+                        <h1 className="text-indigo-300 ">Let's check the Rockets!</h1>
+                        <p>Journey into the cosmos with SpaceX's engaging space exploration.</p>
+                        <a className="btn btn-flat " href="https://www.spacex.com/" target="_blank">SpaceX's</a>
+                    </div>
+                    <div className="image-rocket hidden md:block">
+                        <img src={ImgRocket} alt="Animated Image" id="animated-image"/>
                     </div>
                 </div>
-                <div className="layout">
-                    <LaunchList/>
-                </div>
+                <LaunchList/>
             </Layout>
         </>
     )

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import "./search.styles.css";
+import Xmark from "../../img/xmark.svg";
 
 const SearchBox = ({ placeholder, onSearch }) => {
   const inputRef = useRef(null);
@@ -17,7 +18,11 @@ const SearchBox = ({ placeholder, onSearch }) => {
   };
 
   const handleClickOutside = (event) => {
-    if (inputRef.current && !inputRef.current.contains(event.target)) {
+    if (
+        inputRef.current &&
+        !inputRef.current.contains(event.target) &&
+        !event.target.classList.contains("X-close")
+    ) {
       setInputVisible(false);
     }
   };

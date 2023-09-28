@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchSpaceXLaunches } from '../../api/spaceX';
 import SectionCards from '../card/section';
 import SearchBox from "../search/search";
-import Card from "../card/card.component";
-import Xmark from "../../img/xmark.svg";
-import Layout from "../layout/layout";
+import Launch from "../../routes/launch/launch";
 
 function LaunchList() {
   const [launches, setLaunches] = useState([]);
@@ -46,32 +44,27 @@ function LaunchList() {
 
   return (
       <>
-        <div className="sectionWrapper mx-4">
+        <div className=" lg:justify-center lg:items-center mx-auto w-full  p-4 lg:p-16">
+        <div className=" flex-grow mt-12 mb-5">
           <SearchBox
               placeholder="Search launches..."
               onSearch={handleSearch}
           />
-          {searchLaunch.trim() !== '' && filteredLaunches.length > 0 ? (
-              <div className="filtered-results-section">
-                {filteredLaunches.map((launch) => (
-                    <Card key={launch.id} launch={launch} />
-                ))} <a href="/">
-                <img src={Xmark} alt="back to home" className="X-close" />
-              </a>
-              </div>
-
+          {searchLaunch.trim() !== '' ? (
+              <Launch filteredLaunches={filteredLaunches} />
           ) : (
-              ""
+              null
           )}
         </div>
-          <div className="sectionWrapper mt-5">
-            <h3 className="title">Successfull Launches</h3>
+          <div className="flex-grow  mt-5 mb-5">
+            <h3 className="text-2xl font-semibold mt-4  text-indigo-500">SuccessFull Launches</h3>
             <SectionCards launches={successLaunches} />
 
-            <h3 className="title">Failed Launches</h3>
+            <h3 className="text-2xl font-semibold mt-4  text-indigo-500">Failed Launches</h3>
             <SectionCards launches={failureLaunches} />
 
           </div>
+        </div>
       </>
   )
 }
