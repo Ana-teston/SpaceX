@@ -18,7 +18,7 @@ const Login = ({onLogin}) => {
         e.preventDefault();
 
         try {
-            const responseData = await fetcher(`http://localhost:1337/api/auth/local`, {
+            const responseData = await fetcher(`https://hidden-crag-41367-08ec44186e31.herokuapp.com/api/auth/local`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -13,14 +13,13 @@ const Register = ({onRegister}) => {
         password: "",
     });
 
-    const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const responseData = await fetcher(
-                `http://localhost:1337/api/auth/local/register`,
+                `https://hidden-crag-41367-08ec44186e31.herokuapp.com/api/auth/local/register`,
                 {
                     headers: {
                         "Content-Type": "application/json",

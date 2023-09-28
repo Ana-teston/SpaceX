@@ -27,7 +27,7 @@ export const unsetToken = () => {
 export const getUserFromLocalCookie = () => {
     const jwt = getTokenFromLocalCookie();
     if (jwt) {
-        return fetcher(`http://localhost:1337/api/users/me`, {
+        return fetcher(`https://hidden-crag-41367-08ec44186e31.herokuapp.com/api/users/me`, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${jwt}`,
