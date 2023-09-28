@@ -17,7 +17,7 @@ const Home = () => {
                         <a className="btn btn-flat " href="https://www.spacex.com/" target="_blank">SpaceX's</a>
                     </div>
                     <div className="image-rocket hidden md:block">
-                        <img src={ImgRocket} alt="Animated Image" id="animated-image"/>
+                        <img src={ImgRocket} alt="Animated Image" id="animated-image" style={{ maxWidth: '516px', maxHeight: '290px'}} />
                     </div>
                 </div>
                 <LaunchList/>
